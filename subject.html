@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AstroSpacious</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        body,html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+
+        }
+
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        div {
+            z-index: 1; /* above canvas */
+        }
+
+        .text h1{
+            padding: 50px;
+        }
+
+        .subject-head {
+            width: 100%;
+            height: 50px;
+            text-align: center;
+        }
+
+        .subject-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 20px;
+        }
+
+        .subject td {
+            background-color: lightblue;
+            text-align: center;
+            width: 20%;
+            padding: 20px;
+        }
+
+        .space{
+            background-color: rgba(255 , 121 , 38 , 0);
+            z-index: -1;
+        }
+    </style>
+</head>
+
+
+
+<body>
+
+    <header>
+        <table class="header">
+            <tr>
+                <td class="logo"><img src="img/logo.jpg"></td>
+                <td style="text-align: left;">ASTROSPACIOUS</td>
+                <td class="top"><a href="index.html">HOME</a></td>
+                <td class="top">ABOUT US</td>
+                <td class="top"><a href="test.html">SUBJECT</a></td>
+            </tr>
+        </table>
+    </header>
+
+    <br><br><br><br>
+
+    <canvas id="stars"></canvas>
+    <script src="js/main.js"></script>
+    
+    <div class="art">
+        <br><br><br><br><br><br><br><br><br><br>
+    </div>
+    <div class="space subject">
+        <h1 class="subject-head" style="background-color: #6683ff;">SPACE</h1>
+        <table class="subject-table">
+            <tr>
+                <td>BLACKHOLE</td>
+                <td>STARS</td>
+                <td>GALAXY</td>
+            </tr>
+            <tr>
+                <td>BLACKHOLE</td>
+                <td>STARS</td>
+                <td>GALAXY</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="law subject">
+        <h1 class="subject-head" style="background-color: #ff9666;">LAW</h1>
+        <table class="subject-table">
+            <tr>
+                <td>LAW</td>
+                <td>LEGAL</td>
+                <td>LOOPHOLES</td>
+            </tr>
+            <tr>
+                <td>HISTORY</td>
+                <td>FUTURE</td>
+                <td>GOALS</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="math subject">
+        <h1 class="subject-head" style="background-color: #ff6683;">MATH</h1>
+        <table class="subject-table">
+            <tr>
+                <td>CALCULUS</td>
+                <td>GEOMETRY</td>
+                <td>PROOFS</td>
+            </tr>
+            <tr>
+                <td>STANDARD</td>
+                <td>PROBLEMS</td>
+                <td>FIELDS</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="physics subject">
+        <h1 class="subject-head" style="background-color: #ffe266;">PHYSICS</h1>
+        <table class="subject-table">
+            <tr>
+                <td>SUBATOMIC</td>
+                <td>ASTRAL</td>
+                <td>PROOFS</td>
+            </tr>
+            <tr>
+                <td>QUANTUM</td>
+                <td>SPACE</td>
+                <td>FIELDS</td>
+            </tr>
+        </table>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <h1>CONTACT US</h1>
+        </div>
+    </footer>
+</body>
+
+</html>
