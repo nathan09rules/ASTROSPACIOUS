@@ -20,8 +20,9 @@
             background-position: center;
             background-position-y: -10vh;
             background-position-x: 0vh;
-            background-size: 170vw; /* image height fits screen, width adjusts automatically */
-            background-repeat: no-repeat; /* prevents tiling */
+            background-size: 300vh auto;
+            overflow: hidden;            
+            background-repeat: no-repeat;        
         }
 
         canvas {
@@ -44,6 +45,7 @@
             justify-items: auto;
             background-color: hsla(0, 0%, 71%, 0.2);
             padding-left: 50px;
+            padding-right: 50px;
             border-radius: 20px;
             padding-top: 10px;
             padding-bottom: 60px;
@@ -78,7 +80,7 @@
         <hr>
     </header>
 
-    <div class="title-ASTRO" style="left:5vw;">
+    <div class="title-ASTRO" style="left:5vw; overflow-wrap: break-word;">
         <h1>ASTROSPACIOUS</h1>
         <h2>ABOUT US</h2>
 
