@@ -4,10 +4,10 @@
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
-        ctx.fillStyle = "midnightblue";
+        ctx.fillStyle = "black";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        for (let i = 0; i < 200; i++) {
+        for (let i = 0; i < 300; i++) {
             let x = Math.random() * canvas.width;
             let y = Math.random() * canvas.height;
             let r = Math.random() * 1.5;
