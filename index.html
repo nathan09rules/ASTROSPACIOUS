@@ -19,9 +19,8 @@
             background-image: url("img/earth.jpg"); /* your Earth image */
             background-position: center;
             background-position-y: -10vh;
-            background-position-x: 0vh;
+            background-position-x:  0vw;
             background-size: 300vh auto;
-            overflow: hidden;
             background-repeat: no-repeat;        
         }
 
@@ -60,12 +59,24 @@
         header:hover{
             background-color: rgba(0 , 0 , 0 , 0.3);
         }
+
+        .page{
+            flex:1;
+            min-height: 100vh;
+        }
+
+        .links{
+            display: flex;
+            justify-content: flex-end;
+            gap:20px;
+        }
     </style>
 </head>
 
 
 
 <body>
+    <div class="page">
 
     <header>
         <table class="header">
@@ -93,6 +104,18 @@
 
     </div>
 
+    </div>
+    <footer>
+        <div class="footer">
+            <h1>CONTACT US</h1>
+            <div class="links">
+                <h1>G</h1>
+                <h1>T</h1>
+                <h1>X</h1>
+                <h1>W</h1>
+            </div>
+        </div>
+    </footer>
     
 </body>
 

@@ -1,0 +1,62 @@
+body {
+    color: black;
+}
+
+header {
+    background-color: black;
+    position: relative;
+    /* or relative, if you don't want it fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.left {
+    position: fixed;
+    width: 15vw;
+    height: 100vh;
+    background-color: white;
+    padding-left: 2vw;
+    padding-top: 100px;
+    top: 0px;
+    z-index: 0;
+}
+
+.left h3:hover {
+    color: lightblue;
+}
+
+.right {
+    position: relative;
+    margin-left: 18vw;
+    padding-left: 20px;
+    width: 75vw;
+    padding-top: 10px;
+    margin-bottom: 200px;
+}
+
+.box {
+    background-color: gray;
+    color: black;
+    overflow-wrap: break-word;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+
+    display: flex;
+    align-content: flex-start ;
+    gap: 10px;
+}
+
+.box-text{
+    width: 50vw;
+}
+
+img{
+    border-radius: 10px;
+}
+
+.box:hover {
+    background-color: white;
+}

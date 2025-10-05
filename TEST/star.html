@@ -1,80 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>AstroSpacious</title>
-    <link rel="stylesheet" href="css/main.css">
-    <style>
-        body,html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
+  <meta charset="UTF-8">
+  <title>AstroSpacious - Bare Bones</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        }
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
 
-        canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-        div {
-            z-index: 1; /* above canvas */
-        }
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background-color: #222;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 10;
+    }
 
-        .text h1{
-            padding: 50px;
-        }
-    </style>
+    header .logo {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    header nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    /* Layout */
+    .sidebar {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      width: 200px;
+      height: calc(100% - 60px);
+      background-color: #eee;
+      padding: 15px;
+      overflow-y: auto;
+      border-right: 1px solid #ccc;
+    }
+
+    .sidebar h3 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    main {
+      margin-left: 200px;
+      margin-top: 60px;
+      padding: 20px;
+    }
+
+    .box {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+
+    .box h2 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .sidebar {
+        display: none;
+      }
+
+      main {
+        margin-left: 0;
+      }
+
+      header nav {
+        gap: 10px;
+      }
+    }
+  </style>
 </head>
-
-
-
 <body>
 
-    <header>
-        <table class="header">
-            <tr>
-                <td class="logo"><img src="img/logo.jpg"></td>
-                <td style="text-align: left;">ASTROSPACIOUS</td>
-                <td class="top">Home</td>
-                <td class="top">About us</td>
-                <td class="top"><a href="subject.html">HELLO</a></td>
-            </tr>
-        </table>
-    </header>
+  <header>
+    <div class="logo">AstroSpacious</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Subjects</a>
+      <a href="#">About</a>
+    </nav>
+  </header>
 
-    <br><br><br><br>
+  <aside class="sidebar">
+    <h3>Topic 1</h3>
+    <h3>Topic 2</h3>
+    <h3>Topic 3</h3>
+    <h3>Topic 4</h3>
+  </aside>
 
-    <div class="text" style="width: 50%; height: 50vh; background-color: azure; position: relative; left:20px; border-radius: 10px;">
-        <h1>helllo</h1>
+  <main>
+    <div class="box">
+      <h2>Welcome</h2>
+      <p>This is the bare-bones version of the learning site. Add content here.</p>
     </div>
 
-    <br><br><br><br>
-
-    <div class="text" style="width: 50%; height: 50vh; background-color: azure; position: absolute; right:20px; border-radius: 10px;">
-        <h1>how</h1>
+    <div class="box">
+      <h2>Sample Lesson</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
+  </main>
 
-    <br><br><br><br>
-    
-    <canvas id="stars"></canvas>
-    <script src="js/main.js"></script>
-
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    
-    <footer>
-        <h1>CONTACT US</h1>  
-    </footer>
 </body>
-
 </html>
