@@ -1,0 +1,160 @@
+.subject-header {
+  font-size: 25px;
+  margin-top: 1rem;
+}
+
+@media (max-width: 1000px) {
+  .subject-header {
+    font-size: 15px;
+  }
+}
+
+
+.subject-name {
+  font-size: 40px;
+  font-weight: 700;
+
+  background: linear-gradient(90deg, #c084fc 0%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtopics {
+  width:calc(100vw - 80px);
+  margin-left: 20px;
+  display: grid;
+  grid-template-columns : repeat(auto-fit , minmax(200px , 1fr));
+  gap: calc(100vw/50);
+}
+
+.subtopic-card {
+  background: rgba(10, 15, 30, 0.7);
+  border: 2px solid rgba(59, 130, 246, 0.55); /* neon blue */
+  color: #e5e7eb;
+
+  border-radius: 1rem;
+  padding: 1.5rem;
+  height: 100px;
+
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.25rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  overflow: hidden;
+
+  transition: all 0.3s ease;
+  box-shadow: 0 0 18px rgba(59, 130, 246, 0.25);
+}
+
+br {
+  display: block;
+  height: 100px;
+}
+/* 
+.subject-page {
+  background-color: #01040d;
+  color: #e5e7eb;
+  width: 100vw;
+}
+
+/* Subject Header - Navigational Display
+.subject-header {
+  text-align: center;
+  position: sticky;
+  top: 0;
+  color: #a78bfa;
+  background-color: rgba(5, 8, 20, 0.7);
+  border-bottom: 1px solid rgba(167, 139, 250, 0.3);
+  z-index: 10;
+  width: 99vw;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #c084fc 0%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  color: #94a3b8;
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+}
+.subject-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+  transition: background 0.7s ease-in-out;
+  padding: 4rem 2rem;
+  color: #e5e7eb;
+}
+
+/* Subject Name - Stellar Label
+.subject-name {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.subtopics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* Subtopic Card - Data Crystal 
+.subtopic-card {
+  background: rgba(10, 15, 30, 0.7);
+  border: 2px solid rgba(59, 130, 246, 0.4);
+  color: #e5e7eb;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 250px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.subtopic-card:hover {
+  transform: scale(1.05);
+  background: rgba(10, 15, 30, 0.9);
+  border-color: #a78bfa;
+  box-shadow: 0 10px 40px rgba(167, 139, 250, 0.3), 0 0 20px rgba(167, 139, 250, 0.8);
+}
+
+/* Footer - Event Horizon Line
+.subject-footer {
+  text-align: center;
+  padding: 2rem 0rem;
+  color: #4b5563;
+  font-size: 0.9rem;
+  border-top: 1px dashed rgba(75, 85, 99, 0.1);
+};
+*/
