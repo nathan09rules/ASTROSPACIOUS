@@ -18,39 +18,92 @@ const Topic = () => {
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
 
   useEffect(() => {
-    fetch('/data/data.json')
+    /*DATA TO BE ACCESED */
+    const url_parts = window.location.pathname.split("/").filter(Boolean);
+    const subject = url_parts[1];
+    const topic = url_parts[2];
+    const jsonPath = `/data/${subject}.json`;
+
+    console.log(subject , topic);
+
+    /*DEV CYCLE CURRENT SUBSECTION*/
+    if (["math"].includes(subject)) {
+      fetch(jsonPath)
+        .then((res) => res.json())
+        .then((data) => {
+          const section = data["Geometry"];
+          if (!section) {
+            console.warn("No data found for", jsonPath);
+          }else{
+            setSubSections(section);
+          };
+        })
+        .catch(console.error);
+    } else {
+      fetch('/data/data.json')
       .then((res) => res.json())
       .then((data) => setSubSections(data.star))
       .catch(console.error);
+    };
 
     const handleResize = () => {
-    if (window.innerWidth > 600) {
-      setCollapsed(false);
-    } else {
-      setCollapsed(true);
-    }
-  };
+      if (window.innerWidth > 600) {
+        setCollapsed(false);
+      } else {
+        setCollapsed(true);
+      }
+    };
 
     handleResize();
 
 
     window.addEventListener('resize', handleResize);
 
-  return () => {
-    window.removeEventListener('resize', handleResize);};
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
 
   }, []);
 
-  const scrollToSection = (i: number) => {
-    const card = cardRefs.current[i];
-    if (card && scrollRef.current) {
-      scrollRef.current.scrollTo({
-        top: card.offsetTop - 100,
-        behavior: 'smooth',
+  useEffect(() => {
+  if (!scrollRef.current || subSections.length === 0) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const index = cardRefs.current.indexOf(entry.target as HTMLDivElement);
+          if (index !== -1) setActiveSection(index);
+        }
       });
-      setActiveSection(i);
+    },
+    {
+      root: scrollRef.current,
+      rootMargin: "-50% 0px -50% 0px", // trigger when middle of card is in view
+      threshold: 0,
     }
+  );
+
+  cardRefs.current.forEach(card => card && observer.observe(card));
+
+  return () => {
+    cardRefs.current.forEach(card => card && observer.unobserve(card));
   };
+}, [subSections]);
+  
+
+const scrollToSection = (i: number) => {
+  const card = cardRefs.current[i];
+  if (card && scrollRef.current) {
+    // Smooth scroll to the card
+    scrollRef.current.scrollTo({
+      top: card.offsetTop,
+      behavior: 'smooth',
+    });
+    setActiveSection(i); // mark it active immediately
+  }
+};
+
 
   const goPrev = () => activeSection > 0 && scrollToSection(activeSection - 1);
   const goNext = () => activeSection < subSections.length - 1 && scrollToSection(activeSection + 1);

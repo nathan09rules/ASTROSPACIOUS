@@ -1,9 +1,11 @@
+      body ,html{
+     }      
+      
       /* Base Styles */
       .container {
         min-height: 100vh;
         min-width: 100vw;
         position: relative;
-        overflow: hidden;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       }
 
@@ -22,9 +24,9 @@
         transform: scale(.5) translateY(-120px);
       }
 
-            @media (max-width: 600px) {
+      @media (max-width: 600px) {
         .logo-text {
-          transform: scale(.3) translateY(-180px);
+          transform: scale(.25) translateY(-180px);
         }
 
         .showcaseGrid {

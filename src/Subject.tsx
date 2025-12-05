@@ -36,6 +36,16 @@ export function Subject() {
     window.location.href = url;
   };
 
+  useEffect(() => {
+  const hash = window.location.hash;
+  if (hash) {
+    const el = document.querySelector(hash);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+}, [subjects]);
+
   return (
     <main>
       <header className='subject-header'>
@@ -48,6 +58,7 @@ export function Subject() {
       {subjects.map(subject => (
         <section
           key={subject.id}
+          id={`section-${subject.id}`}
           className={`subject-section black`}
         >
           <h2 className='subject-name gradient centered'>{subject.name}</h2>

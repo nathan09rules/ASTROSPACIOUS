@@ -13,6 +13,7 @@ main {
   z-index: 1;
   width: 100vw;
   min-height: 100vh;
+  max-width: 100vw !important;
 }
 
 .gradient-text{

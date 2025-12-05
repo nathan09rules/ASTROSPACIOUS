@@ -72,7 +72,7 @@ function Select() {
                 key={index}
                 className={`card-wrapper ${isActive ? 'active' : ''}`}
                 style={{
-                  transform: `translateY(${offset * 30}px) scale(${1 - Math.abs(offset) * 0.05}) rotateX(${offset * 2}deg)`,
+                  transform: `translateY(${offset * 30}px) scale(${1 - Math.abs(offset) * 0.2}) rotateX(${offset * 2}deg)`,
                   opacity: offset < 0 ? 0 : Math.max(0, 1 - Math.abs(offset) * 0.2),
                   zIndex: 100 - index,
                   pointerEvents: offset > 2 ? 'none' : 'auto',

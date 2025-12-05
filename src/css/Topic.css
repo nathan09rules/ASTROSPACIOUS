@@ -4,9 +4,13 @@
     box-sizing: border-box;
 }
 
+
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     overflow-x: hidden;
+          overflow-y: auto; /* enable vertical scrolling */
+  scroll-behavior: smooth; /* optional: smooth scroll */
 }
 
 .topic-container {
@@ -84,7 +88,7 @@ body {
 }
 
 .nav-list {
-    padding: 16px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -101,6 +105,7 @@ body {
     border-radius: 12px;
     cursor: pointer;
     transition: all .3s ease;
+    font-size: 14px;
 }
 
 .nav-item:hover {
@@ -142,10 +147,12 @@ body {
     transition: margin-left 0.5s;
     position: relative;
     z-index: 1;
-    justify-content: center;
-    
     margin-left: 0px;
     width: 100vw;
+
+    height: 100vh;         /* fill viewport height */
+    overflow-y: auto;      /* enable vertical scrolling */
+    scroll-behavior: smooth; /* smooth scroll on nav click */
 }
 
 .main.collapsed{

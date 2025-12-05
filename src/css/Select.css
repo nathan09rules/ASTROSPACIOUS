@@ -74,7 +74,7 @@
         }
 
         .main-title {
-          font-size: 48px;
+          font-size: 45px;
           font-weight: 700;
           background: linear-gradient(135deg, #c084fc 0%, #22d3ee 50%, #c084fc 100%);
           -webkit-background-clip: text;
@@ -121,7 +121,7 @@
           padding: 15px;
           border-radius: 20px;
           height: 300px;
-          width: max(500px , calc(100vw/2));
+          width: max(450px , calc(100vw/2));
 
         }
         

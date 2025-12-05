@@ -10,6 +10,9 @@
     border-radius: 15px;
     transform-origin: center;
     width: calc((100vw/3) - 20px);
+
+    background-color: #070c1b;
+    padding: 10px;
 }
 
 /* Active card */
@@ -28,21 +31,16 @@
 
 /* Positions */
 .card.left {
-    transform: translateX(-10px) scale(0.8);
+    transform: translateX(calc((100vw - 20px)/15));
 }
 
 .card.right {
-    transform: translateX(10px) scale(0.8);
-}
+    transform: translateX(calc((100vw - 20px)/-15));
+} 
 
 @media (max-width: 600px) {
     .card.active {
         transform: scale(1.05);
-    }
-
-    .card.left,
-    .card.right {
-        transform: none;
     }
 }
 
