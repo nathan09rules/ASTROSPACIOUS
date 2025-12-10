@@ -3,7 +3,7 @@
     "id": "space",
     "name": "Space Science",
     "color": "indigo",
-    "subtopics": ["Stars", "Astrophysics", "Cosmology", "Rocket Science"],
+    "subtopics": ["Astronomy", "Astrophysics", "Cosmology", "Rocket Science"],
     "url": "/Topic/space"
   },
   {

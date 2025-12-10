@@ -78,7 +78,7 @@ const Topic = () => {
       });
     },
     {
-      root: scrollRef.current,
+      root: null,
       rootMargin: "-50% 0px -50% 0px", // trigger when middle of card is in view
       threshold: 0,
     }
@@ -139,7 +139,7 @@ const scrollToSection = (i: number) => {
             {subSections.map((s, i) => (
               <button
                 key={s.id}
-                onClick={() => scrollToSection(i)}
+                /*onClick={() => scrollToSection(i)}*/
                 className={`nav-item ${activeSection === i ? 'active' : ''}`}
               >
                 <BookOpen size={16} /> {s.title}
@@ -148,7 +148,7 @@ const scrollToSection = (i: number) => {
           </div>
         </nav>
 
-        <main className={`main centered ${collapsed ? '' : 'collapsed'}`} ref={scrollRef}>
+        <div className={`main centered ${collapsed ? '' : 'collapsed'}`} ref={scrollRef}>
           {subSections.map((s, i) => (
             <div key={s.id} ref={(el) => { cardRefs.current[i] = el }} className="subject-card">
               <div className="card-num">{i + 1}</div>
@@ -169,7 +169,7 @@ const scrollToSection = (i: number) => {
               Next
             </button>
           </div>
-        </main>
+        </div>
       </div>
     </>
   );

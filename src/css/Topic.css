@@ -9,13 +9,13 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     overflow-x: hidden;
-          overflow-y: auto; /* enable vertical scrolling */
+    overflow-y: auto; /* enable vertical scrolling */
   scroll-behavior: smooth; /* optional: smooth scroll */
 }
 
 .topic-container {
     display: flex;
-    min-height: 100vh;
+    min-height: auto;
     background: linear-gradient(135deg, #050816 0%, #14103a 50%, #050816 100%);
     position: relative;
     color: #cbd5e1;
@@ -143,21 +143,17 @@ body {
 }
 
 .main {
-    flex: 1;
-    transition: margin-left 0.5s;
+    width: 100%;
+    margin-left: 0;
+    overflow: visible;    /* REMOVE inner scrolling */
+    height: auto;         /* let content define height */
+    padding-bottom: 20px;
     position: relative;
-    z-index: 1;
-    margin-left: 0px;
-    width: 100vw;
-
-    height: 100vh;         /* fill viewport height */
-    overflow-y: auto;      /* enable vertical scrolling */
-    scroll-behavior: smooth; /* smooth scroll on nav click */
 }
 
 .main.collapsed{
     margin-left: 250px;
-    width: calc(100vw - 250px);
+    width: calc(100% - 250px);
 }
 
 .subject-card {
