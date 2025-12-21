@@ -182,12 +182,18 @@ body {
     margin-bottom: 12px;
 }
 
-.card-title {
-    font-size: 28px;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 16px;
+.header-row {
+  display: flex;
+  align-items: center; /* vertically center */
+  gap: 16px;           /* space between number and title */
+  margin-bottom: 16px; /* spacing below header */
 }
+
+.card-title {
+  margin: 0;           /* remove old margin */
+  transform: none;     /* remove the previous transform hack */
+}
+
 
 .card-content {
     color: #cbd5e1;

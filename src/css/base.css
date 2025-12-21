@@ -36,6 +36,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .margin-vertical {
@@ -52,4 +53,20 @@ main {
     transform: scale(1.07);
     box-shadow: 0 0 30px rgba(120,120,255,0.35);
     transition: transform .3s ease, box-shadow .3s ease;
+}
+
+/*USED IN ABOUT*/
+.info {
+  border-radius: 20px;     
+  padding: 5px; 
+  background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+  width: 80%;
+  margin-bottom: 20px;
+  margin: 0 auto;
+}
+
+.info .inner {
+  border-radius: 15px;
+  background-color: #0e122d;
+  padding: 30px;
 }

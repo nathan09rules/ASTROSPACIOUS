@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-//import './css/base.css';
-import './css/Select.css'
+import './css/Select.css';
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Topic from "./Topic.tsx";
 import Space_bg from './Extra/Space-bg.tsx';
@@ -17,7 +16,6 @@ function Select() {
   const [topicCards, setTopicCards] = useState<TopicCard[]>([]);
   const navigate = useNavigate();
 
-  // Fetch JSON data once on mount
   useEffect(() => {
     fetch('/data/new.json')
       .then(res => res.json())
@@ -32,7 +30,6 @@ function Select() {
   const handleSaveForLater = () => {
     if (topicCards.length > 0) {
       setActiveCard((prev) => (prev + 1) % topicCards.length);
-      console.log(activeCard);
     }
   };
 
@@ -42,19 +39,7 @@ function Select() {
 
   return (
     <div className="app-container">
-      <div className="stars-bg">
-        {[...Array(100)].map((_, i) => (
-          <div
-            key={i}
-            className="star"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-            }}
-          />
-        ))}
-      </div>
+      <Space_bg />
 
       <div className="main-content">
         <div className="content-header">
@@ -78,25 +63,38 @@ function Select() {
                   pointerEvents: offset > 2 ? 'none' : 'auto',
                 }}
               >
-                  <div className="select-card">
-                    <div className="card-number">{index + 1}</div>
-                    <h2 className="card-title">{card.title}</h2>
-                    <p className="card-content">{card.content}</p>
-                    {isActive && (
-                      <div className="card-actions">
-                        <button className="btn-primary" onClick={() => redirect('/Topic/space/astro')}>
-                          Explore Topic
-                        </button>
-                        <button className="btn-secondary" onClick={handleSaveForLater}>
-                          Save for Later
-                        </button>
-                      </div>
-                    )}
-                  </div>
+                <div className="select-card">
+                  <div className="card-number">{index + 1}</div>
+                  <h2
+                    className="card-title"
+                    style={{ position: 'fixed', top: '25px', left: '80px' }}
+                  >
+                    {card.title}
+                  </h2>
+                  <p className="card-content">{card.content}</p>
+
+                  {isActive && (
+                    <div className="card-actions">
+                      <button
+                        className="btn-primary"
+                        onClick={() => redirect('/Topic/space/astro')}
+                      >
+                        Explore Topic
+                      </button>
+                      <button
+                        className="btn-secondary"
+                        onClick={handleSaveForLater}
+                      >
+                        Save for Later
+                      </button>
+                    </div>
+                  )}
                 </div>
+              </div>
             );
           })}
         </div>
+
         <div className="card-nav">
           {topicCards.map((_, index) => (
             <button

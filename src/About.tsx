@@ -56,6 +56,10 @@ function About() {
 
             <br className="margin-vertical"></br>
 
+            <div className="info centered"><div className="inner"><h3>About Astrospacious:
+Astrospacious is a student-driven space education and research initiative created to make astronomy and aerospace learning more accessible, practical, and exciting for young minds. 
+Our team works on research projects, educational content, and collaborative experiments that bring real-world space science closer to students. We focus on learning by doing — sharing knowledge, building together, and encouraging questions that go beyond the textbook.
+</h3></div></div>
             <div className="Hover-Board margin-vertical" onMouseMove={handleMouseMove}>
                 {cards.map((card, index) => {
                     let className = "card";
