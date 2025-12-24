@@ -33,7 +33,7 @@ height: "100vh" , width: "100vw", background: "black"
         <Route path="/Write" element={<TextEdit />} />
         <Route path="*" element={<div style={{ height: "100vh", width: "100vw", background: "linear-gradient(to bottom, #000000, #1a1a2e)", padding: "50px" }}><h1 style={{ textAlign: "center" }}>404 Not Found</h1></div>} />
       </Routes>
-      <Footer />
+      <div style={{ zIndex: 1 }}><Footer /></div>
     </BrowserRouter>
   );
 }

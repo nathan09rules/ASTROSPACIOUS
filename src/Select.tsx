@@ -38,7 +38,7 @@ function Select() {
   }
 
   return (
-    <div className="app-container">
+    <main className="app-container">
       <Space_bg />
 
       <div className="main-content">
@@ -109,7 +109,7 @@ function Select() {
       <Routes>
         <Route path="/Topic/space/astroid" element={<Topic />} />
       </Routes>
-    </div>
+    </main>
   );
 }
 

@@ -4,6 +4,8 @@ import { Home, BookOpen, ChevronLeft, ChevronRight } from 'lucide-react';
 import './css/Topic.css';
 import './css/base.css';
 
+import Space_bg from './Extra/Space-bg.tsx';
+
 interface SubSection {
   id: string;
   title: string;
@@ -18,17 +20,26 @@ const Topic = () => {
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
 
   useEffect(() => {
-    // Example: read JSON path dynamically
     const url_parts = window.location.pathname.split("/").filter(Boolean);
-    const subject = url_parts[1];
-    const topic = url_parts[2];
-    const jsonPath = `/data/data.json`;
+    const subject = url_parts[1] || "default";
+    const topic = url_parts[2] || "default";
 
-    fetch(jsonPath)
-      .then(res => res.json())
+    // Construct Worker KV fetch URL with subdomain-style key
+    const workerUrl = `https://astrospacious.dsouzanathan09.workers.dev/?topic=${subject}/${topic}`;
+
+    fetch(workerUrl)
+      .then(res => {
+        if (!res.ok) throw new Error("KV JSON not found");
+        return res.json();
+      })
+      .catch(() => {
+        console.warn("Falling back to default topic from KV");
+        return fetch(`https://astrospacious.dsouzanathan09.workers.dev/?topic=default`)
+          .then(res => res.json());
+      })
       .then(data => {
-        const section = data[topic] || data.star; // fallback to star if topic key not found
-        if (!section) console.warn("No data found for", jsonPath);
+        const section = data.sections;
+        if (!section) console.warn("No data found in KV for", workerUrl);
         else setSubSections(section);
       })
       .catch(console.error);
@@ -38,6 +49,7 @@ const Topic = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
 
   useEffect(() => {
     if (!scrollRef.current || subSections.length === 0) return;
@@ -71,6 +83,7 @@ const Topic = () => {
 
   return (
     <div className="topic-container">
+      <Space_bg />
       <div className="stars-bg">
         {[...Array(80)].map((_, i) => (
           <div key={i} className="star" style={{

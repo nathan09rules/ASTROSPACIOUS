@@ -1,7 +1,25 @@
+.info {
+  border-radius: 20px;     
+  padding: 5px; 
+  background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+  width: min(800px, 80%);
+  margin-bottom: 60px;
+  margin: 0 auto;
+}
+
+.info .inner {
+  border-radius: 15px;
+  background-color: #0e122d;
+  padding: 30px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+}
+
 .Hover-Board {
     display: grid;
     grid-template-columns: repeat(3 , 1fr);
     width:  100vw;
+    margin-top: 100px;
 }
 
 /* CARDS  STATES*/
@@ -117,6 +135,7 @@
     padding: 50px 20px;
     gap: 40px;
     flex-wrap: wrap; /* makes it responsive */
+    font-size: 13px;
 }
 .mission, .vision {
     flex: 1 1 400px;
@@ -126,6 +145,7 @@
     border-radius: 20px;
     box-shadow: 0 0 25px rgba(90,90,255,0.15);
     transition: transform .3s ease, box-shadow .3s ease;
+    margin: 0 10px;
 }
 
 .mission:hover,
@@ -146,7 +166,7 @@
 
 .mission h2, .vision h2 {
     margin-bottom: 15px;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .mission p, .vision p {
@@ -240,21 +260,38 @@
 }
 
 @media (max-width: 900px) {
+    .timeline-container {
+        padding-left: 0;
+    }
+
     .timeline-container::before {
         left: 20px;
     }
 
     .timeline-row {
+        width: 90%;
+        height: auto;
+        margin-left: 0;
+        padding: 0 10px 40px 60px;
+        justify-content: flex-start;
+        transform: none;
+    }
+
+    .timeline-row.left,
+    .timeline-row.right {
+        padding-left: 60px;
+        padding-right: 10px;
+        margin-left: 0;
+    }
+
+    .timeline-card {
         width: 100%;
-        padding-left: 60px !important;
-        padding-right: 0 !important;
-        justify-content: flex-start !important;
     }
 
     .timeline-row.left::after,
     .timeline-row.right::after {
-        left: 2px;
+        left: 12px;
+        right: auto;
+        top: 30px;
     }
 }
-
-

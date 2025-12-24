@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer className="footer">
       <style>{`
-        .footer { margin-top:50px; height:300px; padding:50px; background-color:#0a0e27; text-align:center; }
+        .footer { margin-top:50px; height:300px; padding:50px; background-color:#0a0e27; text-align:center; z-index:0}
         .links a { margin:10px; color:white; }
         .links { margin:20px; }
       `}</style>
