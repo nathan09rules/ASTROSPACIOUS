@@ -1,19 +1,6 @@
 name = "astrospacious"
 compatibility_date = "2025-12-24"
-account_id = "0854df9ccfe0924cd8a3a1d1c52e6c5e"
-workers_dev = true
 
-# SPA assets
-type = "javascript"
-[site]
-bucket = "./dist"
-entry-point = "worker"
-
-# KV
 [[kv_namespaces]]
 binding = "TOPICS_KV"
 id = "7644d9aa95af4930adcba0334a57f2f0"
-
-#[env.production]
-#route = "astrospacious.dsouzanathan09.workers.dev/*"  # optional if using custom domain
-

@@ -24,24 +24,12 @@ const Topic = () => {
     const subject = url_parts[1] || "default";
     const topic = url_parts[2] || "default";
 
-    // Construct Worker KV fetch URL with subdomain-style key
-    const workerUrl = `https://astrospacious.dsouzanathan09.workers.dev/?topic=${subject}/${topic}`;
+    //KV namespace API endpoint
+    const apiUrl = `/kv?topic=${subject}/${topic}`;
 
-    fetch(workerUrl)
-      .then(res => {
-        if (!res.ok) throw new Error("KV JSON not found");
-        return res.json();
-      })
-      .catch(() => {
-        console.warn("Falling back to default topic from KV");
-        return fetch(`https://astrospacious.dsouzanathan09.workers.dev/?topic=default`)
-          .then(res => res.json());
-      })
-      .then(data => {
-        const section = data.sections;
-        if (!section) console.warn("No data found in KV for", workerUrl);
-        else setSubSections(section);
-      })
+    fetch(apiUrl)
+      .then(res => res.json())
+      .then(data => setSubSections(data.sections || []))
       .catch(console.error);
 
     const handleResize = () => setCollapsed(window.innerWidth <= 600);
