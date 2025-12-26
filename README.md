@@ -71,3 +71,10 @@ export default defineConfig([
   },
 ])
 ```
+
+## How to deploy
+npm run deploy
+
+this runs the followning
+npm run build #builds the dist
+npx wrangler pages deploy dist --commit-dirty=true

@@ -5,7 +5,7 @@ import Footer from "./Extra/Footer.tsx";
 
 import Select from "./Select.tsx";
 import Topic from "./Topic.tsx";
-import Galaxy from "./Extra/Galaxy.tsx";
+//import Galaxy from "./Extra/Galaxy.tsx";
 import Subject from "./Subject.tsx";
 import Home from "./Home.tsx";
 import About from "./About.tsx";
@@ -20,7 +20,6 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Select" element={<Select />} />
-            <Route path="/Galaxy" element={<Galaxy />} />
             <Route path="/Subject" element={<Subject />} />
             <Route path="/About" element={<About />} />
             <Route path="/Topic/:subject/:subtopic" element={<Topic />} />

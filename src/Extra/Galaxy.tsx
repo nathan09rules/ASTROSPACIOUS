@@ -1,3 +1,4 @@
+/*
 import React, { useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Points, PointMaterial , OrbitControls} from "@react-three/drei";
@@ -114,3 +115,4 @@ return (
 }
 
 export default Galaxy;
+*/

@@ -2,24 +2,24 @@
   "name": "astro",
   "version": "1.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
   "dependencies": {
-    "@react-three/drei": "^9.62.0",
-    "@react-three/fiber": "^8.15.0",
     "lucide-react": "^0.264.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.16.0",
-    "three": "^0.161.0"
+    "react-router-dom": "^6.16.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.2025.0",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^4.0.0",
     "typescript": "5.1",
     "vite": "^4.4.9"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && tsc",
+    "preview": "vite preview",
+    "deploy": "vite build && npx wrangler pages deploy dist --commit-dirty=true"
   }
 }
