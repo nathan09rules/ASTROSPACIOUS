@@ -4,8 +4,6 @@ import { Home, BookOpen, ChevronLeft, ChevronRight } from 'lucide-react';
 import './css/Topic.css';
 import './css/base.css';
 
-import Space_bg from './Extra/Space-bg.tsx';
-
 interface SubSection {
   id: string;
   title: string;
@@ -20,24 +18,45 @@ const Topic = () => {
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
 
   useEffect(() => {
+    // Example: read JSON path dynamically
     const url_parts = window.location.pathname.split("/").filter(Boolean);
-    const subject = url_parts[1] || "default";
-    const topic = url_parts[2] || "default";
+    const [subject , topic] = url_parts.slice(-2);
+    const jsonPath = `/data/${subject}/${topic}.json`;
 
-    //KV namespace API endpoint
-    const apiUrl = `/kv?topic=${subject}/${topic}`;
+    console.log("Fetching data from", jsonPath);
+fetch(jsonPath)
+  .then(res => {
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status}`);
+    }
 
-    fetch(apiUrl)
-      .then(res => res.json())
-      .then(data => setSubSections(data.sections || []))
-      .catch(console.error);
+    const type = res.headers.get("content-type") || "";
+    if (!type.includes("application/json")) {
+      throw new Error("Response is not JSON");
+    }
 
-    const handleResize = () => setCollapsed(window.innerWidth <= 600);
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    return res.json();
+  })
+  .then(data => {
+    if (!data?.sections) {
+      throw new Error("Missing sections field");
+    }
+    setSubSections(data.sections);
+  })
+  .catch(err => {
+    console.error("Error fetching data:", err);
+    setSubSections([{
+      id: "error",
+      title: "Content Not Found",
+      content: `<p>Could not load <code>${jsonPath}</code></p>`
+    }]);
+  });
+
+  const handleResize = () => setCollapsed(window.innerWidth <= 600);
+  handleResize();
+  window.addEventListener('resize', handleResize);
+  return () => window.removeEventListener('resize', handleResize);
   }, []);
-
 
   useEffect(() => {
     if (!scrollRef.current || subSections.length === 0) return;
@@ -70,8 +89,8 @@ const Topic = () => {
   const goNext = () => activeSection < subSections.length - 1 && scrollToSection(activeSection + 1);
 
   return (
+    <main>
     <div className="topic-container">
-      <Space_bg />
       <div className="stars-bg">
         {[...Array(80)].map((_, i) => (
           <div key={i} className="star" style={{
@@ -121,6 +140,7 @@ const Topic = () => {
         </div>
       </div>
     </div>
+    </main>
   );
 };
 

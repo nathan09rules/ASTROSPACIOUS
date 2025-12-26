@@ -4,3 +4,7 @@ compatibility_date = "2025-12-24"
 [[kv_namespaces]]
 binding = "TOPICS_KV"
 id = "7644d9aa95af4930adcba0334a57f2f0"
+
+[[routes]]
+pattern = "/*"
+script = "dist/_worker.js"
