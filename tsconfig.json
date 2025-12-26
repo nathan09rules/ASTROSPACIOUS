@@ -3,5 +3,12 @@
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
-  ]
+  ],
+  "compilerOptions": {
+    "types": ["@cloudflare/workers-types"],
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "Node"
+  }
+
 }
