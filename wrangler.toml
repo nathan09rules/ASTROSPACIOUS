@@ -1,7 +1,14 @@
-name = "astrospacious"
-compatibility_date = "2025-12-24"
+name = "astro-worker"
+type = "javascript" # or "module" if using ES modules
+account_id = "0854df9ccfe0924cd8a3a1d1c52e6c5e"
+workers_dev = true
+compatibility_date = "2025-12-26"
 
+# KV namespace bindings
 kv_namespaces = [
-binding = "TOPICS_KV"
-id = "7644d9aa95af4930adcba0334a57f2f0"
+  { binding = "TOPICS_KV", id = "7644d9aa95af4930adcba0334a57f2f0" }
 ]
+
+[build]
+command = "tsc"
+watch_dir = "worker"  # your worker folder
