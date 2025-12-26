@@ -37,8 +37,8 @@ fetch(jsonPath)
 
     return res.json();
   })
-  .then(data => {
-    if (!data?.sections) {
+  .then((data: any) => {
+    if (!data.sections) {
       throw new Error("Missing sections field");
     }
     setSubSections(data.sections);
