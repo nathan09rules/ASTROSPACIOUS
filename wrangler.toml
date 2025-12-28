@@ -3,4 +3,4 @@ pages_build_output_dir = "dist"
 
 [[kv_namespaces]]
 binding = "TOPICS_KV"
-id = "7644d9aa95af4930adcba0334a57f2f0"
+id = "bb1be2087af6466fb8e995fa12648c1d"
