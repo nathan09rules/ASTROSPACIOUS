@@ -32,19 +32,19 @@ export function Subject() {
     };
   }, []);
 
-  const handleSubjectClick = (url : string) => {
+  const handleSubjectClick = (url: string) => {
     window.location.href = url;
   };
 
   useEffect(() => {
-  const hash = window.location.hash;
-  if (hash) {
-    const el = document.querySelector(hash);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+    const hash = window.location.hash;
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
     }
-  }
-}, [subjects]);
+  }, [subjects]);
 
   return (
     <main>
@@ -53,7 +53,7 @@ export function Subject() {
         <p className='subtitle centered'>Exploring Knowledge Beyond Limits</p>
       </header>
 
-      <div className='margin-vertical'/>
+      <div className='margin-vertical' />
 
       {subjects.map(subject => (
         <section
@@ -62,8 +62,8 @@ export function Subject() {
           className={`subject-section black`}
         >
           <h2 className='subject-name gradient centered'>{subject.name}</h2>
-          <div className='margin-vertical'/>
-          <div className='subtopics centered'>
+          <div className='margin-vertical' />
+          <div className='subtopics'>
             {subject.subtopics.map((topic, idx) => (
               <div
                 key={idx}
@@ -74,7 +74,7 @@ export function Subject() {
               </div>
             ))}
           </div>
-          <div className='margin-vertical'/><br />
+          <div className='margin-vertical' /><br />
         </section>
       ))}
       <Space_bg></Space_bg>

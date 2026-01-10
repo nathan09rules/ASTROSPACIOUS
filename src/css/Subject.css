@@ -21,16 +21,18 @@
 }
 
 .subtopics {
-  width:calc(100vw - 80px);
-  margin-left: 20px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns : repeat(auto-fit , minmax(200px , 1fr));
-  gap: calc(100vw/50);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
 }
 
 .subtopic-card {
   background: rgba(10, 15, 30, 0.7);
-  border: 2px solid rgba(59, 130, 246, 0.55); /* neon blue */
+  border: 2px solid rgba(59, 130, 246, 0.55);
+  /* neon blue */
   color: #e5e7eb;
 
   border-radius: 1rem;
@@ -56,6 +58,7 @@ br {
   display: block;
   height: 100px;
 }
+
 /* 
 .subject-page {
   background-color: #01040d;
