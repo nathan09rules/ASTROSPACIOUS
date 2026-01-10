@@ -1,25 +1,144 @@
-import { Mail, Phone, Instagram, MessageCircle } from "lucide-react";
+import React from 'react';
+import "font-awesome/css/font-awesome.min.css";
 
-function Footer() {
+
+const Footer: React.FC = () => {
+  const styles: Record<string, React.CSSProperties> = {
+    footer: {
+      background: '#000',
+      padding: '30px 0px',
+      fontFamily: "'Play', sans-serif",
+      textAlign: 'center',
+      position: 'relative',
+      zIndex: 100,
+    },
+    row: {
+      width: '100%',
+      margin: '1% 0%',
+      padding: '0.6% 0%',
+      color: 'gray',
+      fontSize: '0.8em',
+    },
+    link: {
+      textDecoration: 'none',
+      color: 'gray',
+      transition: '0.5s',
+    },
+    ul: {
+      width: '100%',
+      listStyle: 'none',
+      padding: 0,
+      margin: 0,
+    },
+    li: {
+      display: 'inline-block',
+      margin: '0px 30px',
+    },
+    icon: {
+      fontSize: '2em',
+      margin: '0% 1%',
+    },
+  };
+
   return (
-    <footer className="footer">
-      <style>{`
-        .footer { margin-top:50px; height:300px; padding:50px; background-color:#0a0e27; text-align:center; z-index:2}
-        .links a { margin:10px; color:white; }
-        .links { margin:20px; }
-      `}</style>
-      <h1>Get in Touch!</h1>
-      <div className="links">
-        <a href="https://wa.me/YOUR_NUMBER" target="_blank" rel="noopener noreferrer"><MessageCircle size={60} /></a>
-        <a href="mailto:youremail@example.com"><Mail size={60} /></a>
-        <a href="tel:+1234567890"><Phone size={60} /></a>
-        <a href="https://instagram.com/YOUR_USERNAME" target="_blank" rel="noopener noreferrer">
-          <Instagram size={60} />
-        </a>
+    <footer>
+      <div style={styles.footer}>
+        <div style={styles.row}>
+          <a
+            href="#"
+            style={styles.link}
+            onMouseEnter={(e) => e.currentTarget.style.color = '#fff'}
+            onMouseLeave={(e) => e.currentTarget.style.color = 'gray'}
+          >
+            <i className="fa fa-facebook" style={styles.icon}></i>
+          </a>
+          <a
+            href="#"
+            style={styles.link}
+            onMouseEnter={(e) => e.currentTarget.style.color = '#fff'}
+            onMouseLeave={(e) => e.currentTarget.style.color = 'gray'}
+          >
+            <i className="fa fa-instagram" style={styles.icon}></i>
+          </a>
+          <a
+            href="#"
+            style={styles.link}
+            onMouseEnter={(e) => e.currentTarget.style.color = '#fff'}
+            onMouseLeave={(e) => e.currentTarget.style.color = 'gray'}
+          >
+            <i className="fa fa-envelope" style={styles.icon}></i>
+          </a>
+          <a
+            href="#"
+            style={styles.link}
+            onMouseEnter={(e) => e.currentTarget.style.color = '#fff'}
+            onMouseLeave={(e) => e.currentTarget.style.color = 'gray'}
+          >
+            <i className="fa fa-twitter" style={styles.icon}></i>
+          </a>
+        </div>
+
+        <div style={styles.row}>
+          <ul style={styles.ul}>
+            <li style={styles.li}>
+              <a
+                href="#"
+                style={styles.link}
+                onMouseEnter={(e) => e.currentTarget.style.color = '#fff'}
+                onMouseLeave={(e) => e.currentTarget.style.color = 'gray'}
+              >
+                Contact us
+              </a>
+            </li>
+            <li style={styles.li}>
+              <a
+                href="#"
+                style={styles.link}
+                onMouseEnter={(e) => e.currentTarget.style.color = '#fff'}
+                onMouseLeave={(e) => e.currentTarget.style.color = 'gray'}
+              >
+                Our Services
+              </a>
+            </li>
+            <li style={styles.li}>
+              <a
+                href="#"
+                style={styles.link}
+                onMouseEnter={(e) => e.currentTarget.style.color = '#fff'}
+                onMouseLeave={(e) => e.currentTarget.style.color = 'gray'}
+              >
+                Privacy Policy
+              </a>
+            </li>
+            <li style={styles.li}>
+              <a
+                href="#"
+                style={styles.link}
+                onMouseEnter={(e) => e.currentTarget.style.color = '#fff'}
+                onMouseLeave={(e) => e.currentTarget.style.color = 'gray'}
+              >
+                Terms & Conditions
+              </a>
+            </li>
+            <li style={styles.li}>
+              <a
+                href="#"
+                style={styles.link}
+                onMouseEnter={(e) => e.currentTarget.style.color = '#fff'}
+                onMouseLeave={(e) => e.currentTarget.style.color = 'gray'}
+              >
+                Career
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div style={styles.row}>
+          ASTROSPACIOUS Copyright © 2021 Inferno - All rights reserved || Designed By: Mahesh
+        </div>
       </div>
-      <p>© 2024 ASTROSPACIOUS. All rights reserved.</p>
     </footer>
   );
-}
+};
 
 export default Footer;

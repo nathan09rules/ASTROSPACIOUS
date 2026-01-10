@@ -33,7 +33,7 @@ const team = {
 
 const timeline = [
     { year: "2022", events: ["Founded ASTROSPACIOUS", "Hosted first webinar on 'The Wonders of the Universe'"] },
-    { year: "2023", events: ["Invited Professionals to present topics and guide our team " , "Started more collaborations"] },
+    { year: "2023", events: ["Invited Professionals to present topics and guide our team ", "Started more collaborations"] },
     { year: "2023", events: ["Launched interactive workshops on telescope usage", "Expanded community events to include stargazing nights"] },
     { year: "2024", events: ["Introduced advanced webinars on astrophysics", "Collaborated with local observatories for exclusive events"] }
 ];
@@ -57,9 +57,9 @@ function About() {
             <br className="margin-vertical"></br>
 
             <div className="info centered"><div className="inner"><h3>
-Astrospacious is a student-driven space education and research initiative created to make astronomy and aerospace learning more accessible, practical, and exciting for young minds. 
-Our team works on research projects, educational content, and collaborative experiments that bring real-world space science closer to students. We focus on learning by doing — sharing knowledge, building together, and encouraging questions that go beyond the textbook.
-</h3></div></div>
+                Astrospacious is a student-driven space education and research initiative created to make astronomy and aerospace learning more accessible, practical, and exciting for young minds.
+                Our team works on research projects, educational content, and collaborative experiments that bring real-world space science closer to students. We focus on learning by doing — sharing knowledge, building together, and encouraging questions that go beyond the textbook.
+            </h3></div></div>
             <div className="Hover-Board margin-vertical" onMouseMove={handleMouseMove}>
                 {cards.map((card, index) => {
                     let className = "card";
@@ -123,24 +123,24 @@ Our team works on research projects, educational content, and collaborative expe
                 </div>
             </section>
 
-<section className="timeline">
-    <h1 className="gradient-text centered">Our Journey So Far</h1>
+            <section className="timeline">
+                <h1 className="gradient-text centered">Our Journey So Far</h1>
 
-    <div className="timeline-container">
-        {timeline.map((item, index) => (
-            <div key={index} className={`timeline-row ${index % 2 === 0 ? "left" : "right"}`}>
-                <div className="timeline-card glow glow-hover">
-                    <h2 className="year">{item.year}</h2>
-                    <ul>
-                        {item.events.map((ev, i) => (
-                            <li key={i}>{ev}</li>
-                        ))}
-                    </ul>
+                <div className="timeline-container">
+                    {timeline.map((item, index) => (
+                        <div key={index} className={`timeline-row ${index % 2 === 0 ? "left" : "right"}`}>
+                            <div className="timeline-card glow glow-hover">
+                                <h2 className="year">{item.year}</h2>
+                                <ul>
+                                    {item.events.map((ev, i) => (
+                                        <li key={i}>{ev}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-            </div>
-        ))}
-    </div>
-</section>
+            </section>
 
         </main>
     )
