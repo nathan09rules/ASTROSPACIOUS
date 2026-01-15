@@ -17,46 +17,35 @@ const Topic = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
 
-  useEffect(() => {
-    // Example: read JSON path dynamically
-    const url_parts = window.location.pathname.split("/").filter(Boolean);
-    const [subject , topic] = url_parts.slice(-2);
-    const jsonPath = `/data/${subject}/${topic}.json`;
+useEffect(() => {
+  const url_parts = window.location.pathname.split("/").filter(Boolean);
+  // Get last two parts: e.g., "space", "Astronomy.json"
+  let [subject, topic] = url_parts.slice(-2);
 
-    console.log("Fetching data from", jsonPath);
-fetch(jsonPath)
-  .then(res => {
-    if (!res.ok) {
-      throw new Error(`HTTP ${res.status}`);
-    }
+  // Clean the topic name: remove .json if the URL already has it
+  const cleanTopic = topic.replace('.json', '');
+  const jsonPath = `/data/${subject}/${cleanTopic}.json`;
 
-    const type = res.headers.get("content-type") || "";
-    if (!type.includes("application/json")) {
-      throw new Error("Response is not JSON");
-    }
+  console.log("Fetching data from:", jsonPath);
 
-    return res.json();
-  })
-  .then((data: any) => {
-    if (!data.sections) {
-      throw new Error("Missing sections field");
-    }
-    setSubSections(data.sections);
-  })
-  .catch(err => {
-    console.error("Error fetching data:", err);
-    setSubSections([{
-      id: "error",
-      title: "Content Not Found",
-      content: `<p>Could not load <code>${jsonPath}</code></p>`
-    }]);
-  });
-
-  const handleResize = () => setCollapsed(window.innerWidth <= 600);
-  handleResize();
-  window.addEventListener('resize', handleResize);
-  return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  fetch(jsonPath)
+    .then(res => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return res.json();
+    })
+    .then((data: any) => {
+      if (!data.sections) throw new Error("Missing sections field");
+      setSubSections(data.sections);
+    })
+    .catch(err => {
+      console.error("Error fetching data:", err);
+      setSubSections([{
+        id: "error",
+        title: "Content Not Found",
+        content: `<p>Could not load <code>${jsonPath}</code></p><p>Error: ${err.message}</p>`
+      }]);
+    });
+}, []);
 
   useEffect(() => {
     if (!scrollRef.current || subSections.length === 0) return;

@@ -75,7 +75,7 @@ function Select() {
                     <div className="card-actions">
                       <button
                         className="btn-primary"
-                        onClick={() => redirect(`/Topic${card.url}`)} // CHANGE 2: Use dynamic URL
+                        onClick={() => redirect('/Topic' + card.url)}
                       >
                         Explore Topic
                       </button>
