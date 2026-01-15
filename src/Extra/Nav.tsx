@@ -59,12 +59,14 @@ function Nav() {
           <a href="/">Home</a>
           <a href="/About">About</a>
 
-          {/* HOVER WRAPPER */}
+          {/* HOVER WRAPPER
           <div
             className="subject-wrapper"
             onMouseEnter={() => setShowSubjects(true)}
             onMouseLeave={() => setShowSubjects(false)}
           >
+
+          /*
             <a href="/Subject">Subject</a>
 
             <div className={`NavSubject ${showSubjects ? "visible" : "hidden"}`}>
@@ -79,6 +81,7 @@ function Nav() {
               ))}
             </div>
           </div>
+          */}
 
           <a href="/Select" className="btn">New</a>
         </div>

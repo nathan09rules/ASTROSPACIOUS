@@ -58,20 +58,17 @@ function Select() {
                 className={`card-wrapper ${isActive ? 'active' : ''}`}
                 style={{
                   transform: `translateY(${offset * 30}px) scale(${1 - Math.abs(offset) * 0.2}) rotateX(${offset * 2}deg)`,
-                  opacity: offset < 0 ? 0 : Math.max(0, 1 - Math.abs(offset) * 0.2),
+                  opacity: offset < 0 ? 0 : 1,
                   zIndex: 100 - index,
                   pointerEvents: offset > 2 ? 'none' : 'auto',
                 }}
               >
                 <div className="select-card">
-                  <div className="card-number">{index + 1}</div>
-                  <h2
-                    className="card-title"
-                    style={{ position: 'fixed', top: '25px', left: '80px' }}
-                  >
-                    {card.title}
-                  </h2>
-                  <p className="card-content">{card.content}</p>
+                  <div className="card-header">
+                    <div className="card-number">{index + 1}</div>
+                    <h2 className="card-title">{card.title}</h2>
+                  </div>
+                  <p className="card-contents">{card.content}</p>
 
                   {isActive && (
                     <div className="card-actions">
