@@ -57,6 +57,7 @@ function Select() {
                 key={index}
                 className={`card-wrapper ${isActive ? 'active' : ''}`}
                 style={{
+                  background: card.gradient, // CHANGE 1: Apply JSON gradient
                   transform: `translateY(${offset * 30}px) scale(${1 - Math.abs(offset) * 0.2}) rotateX(${offset * 2}deg)`,
                   opacity: offset < 0 ? 0 : 1,
                   zIndex: 100 - index,
@@ -74,7 +75,7 @@ function Select() {
                     <div className="card-actions">
                       <button
                         className="btn-primary"
-                        onClick={() => redirect('/Topic/space/astro')}
+                        onClick={() => redirect(`/Topic${card.url}`)} // CHANGE 2: Use dynamic URL
                       >
                         Explore Topic
                       </button>
@@ -104,7 +105,7 @@ function Select() {
       </div>
 
       <Routes>
-        <Route path="/Topic/space/astroid" element={<Topic />} />
+        <Route path="/Topic/*" element={<Topic />} /> {/* CHANGE 3: Catch-all for dynamic paths */}
       </Routes>
     </main>
   );

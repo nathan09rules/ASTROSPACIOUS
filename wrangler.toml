@@ -1,6 +1,9 @@
 name = "astrospacious"
-pages_build_output_dir = "dist"
 
+# Pages build directory (required)
+pages_build_output_dir = "./dist"
+
+# KV bindings
 [[kv_namespaces]]
-binding = "TOPICS_KV"
-id = "bb1be2087af6466fb8e995fa12648c1d"
+binding = "topic-data"
+id = "7644d9aa95af4930adcba0334a57f2f0"

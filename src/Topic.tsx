@@ -130,7 +130,7 @@ fetch(jsonPath)
               <h2 className="card-title centered">{s.title}</h2>
             </div>
 
-            <div className="card-content" dangerouslySetInnerHTML={{ __html: s.content }} />
+            <div className="card-contents" dangerouslySetInnerHTML={{ __html: s.content }} />
           </div>
         ))}
 

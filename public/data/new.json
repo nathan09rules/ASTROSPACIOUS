@@ -1,30 +1,16 @@
 {
   "sunday": [
     {
-      "title": "Introduction to Stellar Astrophysics",
-      "content": "Explore the fundamental principles governing the life cycles of stars, from their birth in cosmic nurseries to their spectacular deaths. Understand the physics of stellar formation, nuclear fusion, and the intricate dance of gravity and radiation pressure.",
-      "gradient": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-      "url": "/Topic/"
+      "title": "Stellar Astrophysics",
+      "content": "A comprehensive study of the physical properties and life cycles of stars. This covers the process of star formation in molecular clouds, the mechanics of nuclear fusion (proton-proton chain and CNO cycle), and the eventual transition of stars into remnants such as white dwarfs, neutron stars, or black holes.",
+      "gradient": "linear-gradient(135deg, #2b5876 0%, #4e4376 100%)",
+      "url": "/space/Astronomy"
     },
     {
-      "title": "Star Formation and Early Evolution",
-      "content": "Witness the birth of stars within vast molecular clouds. Learn how gravity overcomes thermal pressure to create protostars, and follow their journey through the T Tauri phase to the main sequence. Discover the role of angular momentum and magnetic fields.",
-      "gradient": "linear-gradient(135deg, #764ba2 0%, #f093fb 100%)"
-    },
-    {
-      "title": "Main Sequence Stars and Nuclear Fusion",
-      "content": "Delve into the heart of stellar engines where hydrogen fuses into helium through the proton-proton chain and CNO cycle. Understand hydrostatic equilibrium, energy transport mechanisms, and how mass determines a star's fate on the Hertzsprung-Russell diagram.",
-      "gradient": "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
-    },
-    {
-      "title": "Stellar Evolution and Death",
-      "content": "Journey through the final stages of stellar life. From red giants to white dwarfs, witness the dramatic death throes of massive stars in supernovae, and explore the exotic remnants: neutron stars and black holes. Understand nucleosynthesis and cosmic recycling.",
-      "gradient": "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
-    },
-    {
-      "title": "Observational Techniques in Stellar Studies",
-      "content": "Master the tools astronomers use to unlock stellar secrets. From spectroscopy revealing chemical compositions to interferometry mapping stellar surfaces. Learn about space telescopes, adaptive optics, and how we measure distances across the cosmic void.",
-      "gradient": "linear-gradient(135deg, #fa709a 0%, #fee140 100%)"
+      "title": "Geometry Foundations",
+      "content": "An exploration of Euclidean geometry and its practical applications. The curriculum spans the basic elements of points, lines, and planes, the properties of 2D polygons and 3D solids, and the integration of algebra through coordinate geometry and the Cartesian plane.",
+      "gradient": "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
+      "url": "/Math/Geometry"
     }
   ]
 }
